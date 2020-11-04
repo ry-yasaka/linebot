@@ -7,29 +7,16 @@ Original file is located at
     https://colab.research.google.com/drive/1zJMDa0YJ5rHJ-tcR_7bzNg_H1YAv3kXx
 """
 
-from google.colab import drive 
-drive.mount('/content/drive')
 
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/drive/'My Drive'/'linebot'
-
-!pip install pya3rt
-!pip install line-bot-sdk
-!pip install flask-ngrok
-
-!curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-
-!heroku login
 
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import pya3rt
-from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
-run_with_ngrok(app)
+
 line_bot_api = LineBotApi('j/gSSSBiDuJ27Kv0pmKqp/a2p4VInR33bUxv/AvoDSfinpdx7RZZSaEJrGdNjDk8iRZBMsIUzoqDsuDxosaSQh5P7AUjaT7srGAkDa5L883FELLCXzJDccpKeQq50VVe/CLwQNDKwzIMhqe3XwrHPAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('d8a4317b795e4e51949bf9a79ad9823e')
 
